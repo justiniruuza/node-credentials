@@ -1,5 +1,5 @@
 {
-  "name": "node-credentials",
+  "name": "@jitera/node-credentials",
   "version": "1.4.1",
   "description": "Encrypted json for manage all credentials, similar to rails encrypted secrets",
   "main": "src/index.js",
@@ -14,18 +14,18 @@
     "encrypted",
     "env"
   ],
-  "author": "migue.masx@gmail.com",
+  "author": "justin.phan@jitera.com",
   "license": "MIT",
   "dependencies": {
-    "command-line-args": "^5.0.2",
-    "command-line-usage": "^5.0.5",
-    "crypto": "^1.0.1",
-    "dotenv": "^16.0.3",
-    "ejs": "^2.6.1",
-    "yaml": "^1.10.0"
+    "command-line-args": "5.0.2",
+    "command-line-usage": "5.0.5",
+    "crypto": "1.0.1",
+    "dotenv": "16.0.3",
+    "ejs": "2.6.1",
+    "yaml": "1.10.0"
   },
   "devDependencies": {
-    "jest": "^26.4.2",
-    "jest-junit": "^11.0.1"
+    "jest": "26.4.2",
+    "jest-junit": "11.0.1"
   }
 }

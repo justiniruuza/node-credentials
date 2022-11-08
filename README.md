@@ -1,3 +1,5 @@
+# Folk from [node-credentials](https://github.com/MiguelSavignano/node-credentials) with some adjust for personal usage
+
 # Node encrypted secrets
 
 Manage your secrets with single entrypted file.

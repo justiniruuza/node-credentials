@@ -105,7 +105,8 @@ class Vault {
       ivBase64 = await core.generateIV('base64');
     }
     const cipherBundle = await this.encryptFnc(masterKey, text, ivBase64);
-    fs.writeFileSync(`${this.credentialsFilePath}`, cipherBundle);
+
+    fs.writeFileSync(`${this.credentialsFilePath}`, Buffer.from(cipherBundle).toString('base64'));
     try {
       fs.unlinkSync(`${this.credentialsFilePath}.iv`, 'utf8');
     } catch {}
@@ -115,7 +116,7 @@ class Vault {
 
   decryptFile() {
     const masterKey = this.getMasterKey(true);
-    const text = fs.readFileSync(`${this.credentialsFilePath}`, 'utf8');
+    const text = Buffer.from(fs.readFileSync(`${this.credentialsFilePath}`), 'base64').toString('utf8');    
     const [decryptCredentials, iv] = this.decryptFnc(masterKey, text);
     fs.writeFileSync(`${this.credentialsFilePath}`, decryptCredentials, 'utf8');
     fs.writeFileSync(`${this.credentialsFilePath}.iv`, iv, 'utf8');
